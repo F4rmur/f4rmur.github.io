@@ -1,23 +1,95 @@
+:root{
+    --color-cream: #f7f4ef;
+    --color-midnight: #1b2a2f;
+    --color-teal-dark: #1f4d4c;
+    --color-mint: #86c0b2;
+    --color-ink: #0f272b;
+    --color-gradient-start: #305f72;
+    --color-gradient-end: #508991;
+    --color-blush: #f7ede2;
+    --color-peach: #ffe8d6;
+    --color-apricot: #f0b67f;
+    --color-charcoal: #1f1f1f;
+}
+
 body{
-    background: #62a388; 
-    color: #343434;
+    background: var(--color-cream); 
+    color: var(--color-midnight);
 }
 
 .navbar {
-    background: #343434; 
+    background: var(--color-teal-dark);
+    color: var(--color-cream);
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+.nav-item a{
+    margin:0 5px 0 5px;
+    color: var(--color-cream);
+}
+
+.nav-item a:hover{
+    background: var(--color-mint);
+    color: var(--color-ink);
+    display: flex;
+}
+
+.nav-link.active{
+    background: var(--color-mint) !important;
+    color: var(--color-ink) !important;
 }
 
 #part1{
-    background: #055e68; 
-    color: #b9d2d2;
+    background: linear-gradient(135deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%); 
+    color: var(--color-cream);
     padding-top: 20px;
     height: 400px;
     text-align: center;
+    scroll-margin-top: 80px;
 }
 
-.couleurs{
-	background: #343434; 
-	background: #055e68; 
-	background: #62a388; 
-	background: #b9d2d2; 
+#Home_Icon{
+    height: 24px;
+}
+
+#feuillage1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#part2{
+    background: var(--color-blush);
+    padding: 40px 20px;
+    min-height: 400px;
+    text-align: left;
+    scroll-margin-top: 80px;
+    color: var(--color-ink);
+}
+
+#part3{
+    background: var(--color-peach);
+    padding: 40px 20px;
+    min-height: 400px;
+    text-align: left;
+    scroll-margin-top: 80px;
+    color: var(--color-midnight);
+}
+
+#part4{
+    background: var(--color-apricot);
+    padding: 40px 20px;
+    min-height: 600px;
+    text-align: left;
+    scroll-margin-top: 80px;
+    color: var(--color-charcoal);
+}
+
+a{
+    color: var(--color-teal-dark);
+    text-decoration: none;
 }
