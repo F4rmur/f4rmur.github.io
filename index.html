@@ -49,7 +49,7 @@
         // zone gestion du perso
         window.addEventListener('wheel', function(e) {
             e.preventDefault();
-            window.scrollBy(e.deltaY, 0); // Scroll horizontal
+            window.scrollBy(e.deltaY || e.deltaX, 0); // Scroll horizontal
             if (e.deltaY > 0 || e.deltaX > 0) {
                 document.getElementById('perso').style.transform = 'rotateY(180deg)';
             }else {
