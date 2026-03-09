@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Arthur Bayard</title>
+    <link href="/ressources/css/accueil.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="calque">
+    </div>
+
+    <div>
+        <img src="/ressources/silksong/perso.png" id="perso" alt="perso" name="perso">
+    </div>
+
+    <div id="intro" class="zone_prio">
+        <h1>scroll ou clique sur les liens pour explorer</h1>
+        <p>
+            <a class="nav-link" href="#zone1">zone 1</a>
+            <a class="nav-link" href="#zone2">zone 2</a>
+            <a class="nav-link" href="#zone3">zone 3</a>
+            <a class="nav-link" href="#zone4">zone 4</a>
+        </p>
+    </div>
+
+    <div id="zone1" class="zone_prio">
+        <h1>Arthur Bayard</h1>
+        <p>Développeur Web</p>
+    </div>
+
+    <div id="zone2" class="zone_prio">
+        <h1>Arthur Bayard</h1>
+        <p>Développeur Web</p>
+    </div>
+
+    <div id="zone3" class="zone_prio">
+        <h1>Arthur Bayard</h1>
+        <p>Développeur Web</p>
+    </div>
+
+    <div id="zone4" class="zone_prio">
+        <h1>Arthur Bayard</h1>
+        <p>Développeur Web</p>
+    </div>
+
+    <script>
+        // zone gestion du perso
+        window.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            window.scrollBy(e.deltaY || e.deltaX, 0); // Scroll horizontal
+            if (e.deltaY > 0 || e.deltaX > 0) {
+                document.getElementById('perso').style.transform = 'rotateY(180deg)';
+            }else {
+                document.getElementById('perso').style.transform = 'rotateY(0deg)';
+            }
+        });
+
+
+        // zone gestion du scroll et de la nav
+        const sections = document.querySelectorAll('#zone1, #zone2, #zone3, #zone4');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    document.getElementById('perso').style.transform = 'rotateY(180deg)';
+                    targetElement.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+                }
+            });
+        });
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach((link) => {
+                            const isTarget = link.getAttribute('href') === `#${id}`;
+                            link.classList.toggle('active', isTarget);
+                        });
+                    }
+                });
+            },
+            {
+                threshold: 0.4,
+                rootMargin: '-80px 0px -40% 0px',
+            }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+    </script>
+
+</body>
+</html>
