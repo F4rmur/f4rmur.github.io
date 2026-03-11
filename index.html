@@ -1,127 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Arthur Bayard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/ressources/css/index.css" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Arthur Bayard : parcours, expériences, portfolio et contact. Structure professionnelle, responsive et optimisée SEO." />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0b1220" />
+    <title>Accueil | Arthur Bayard</title>
+    <link rel="canonical" href="./" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./" aria-label="Retour à l'accueil">
+          <img src="assets/Arthur-Bayard.webp" alt="Arthur Bayard développeur full stack" title="Arthur Bayard développeur full stack" class="logo" aria-hidden="true"/>
+          <span>Arthur Bayard</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" data-nav-toggle>
+          <span class="bars" aria-hidden="true"><span></span></span>
+          Menu
+        </button>
+
+        <nav id="nav" class="site-nav" data-site-nav data-open="false" aria-label="Navigation principale">
+          <ul>
+            <li><a href="./" data-nav-link aria-current="page">Accueil</a></li>
+            <li><a href="./experience-pro/" data-nav-link>Expérience pro</a></li>
+            <li><a href="./parcours-loisirs/" data-nav-link>Parcours &amp; loisirs</a></li>
+            <li><a href="./portfolio/" data-nav-link>Portfolio</a></li>
+            <li><a href="./contact/" data-nav-link>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="card card-pad">
+            <p class="pill"><strong>Objectif</strong> : Devenir développeur full stack</p>
+            <h1>Bienvenue sur mon site</h1>
+            <p class="muted">
+              Ici vous trouverez un résumé de mon parcours, mes expériences professionnelles et un espace portfolio.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="./contact/">Me contacter</a>
+              <a class="btn" href="./experience-pro/">Voir mon expérience</a>
+              <a class="btn" href="./portfolio/">Ouvrir le portfolio</a>
+              <a class="btn" href="assets/CV-dev-Arthur-Bayard.pdf" target="_blank">Ouvrir le CV</a>
+            </div>
+          </div>
+
+          <aside class="hero-aside">
+            <div class="card card-pad">
+              <h2 style="margin:0 0 10px; font-size:1.15rem;">Me suivre</h2>
+              <p class="muted" style="margin:0 0 12px;">
+                Quelques profils :
+              </p>
+              <div class="grid-1">
+                <div class="grid-item">
+                  <h3 style="margin:0 0 6px;">LinkedIn</h3>
+                  <p style="margin:0;">
+                    <a href="https://www.linkedin.com/in/arthur-bayard-5a5174344/" target="_blank" class="link">Ouvrir LinkedIn</a>
+                  </p>
+                </div>
+                <div class="grid-item">
+                  <h3 style="margin:0 0 6px;">GitHub</h3>
+                  <p style="margin:0;">
+                    <a href="https://github.com/F4rmur" target="_blank">Ouvrir GitHub</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="\ressources\icons\home-icon.png" alt="Home_Icon" name="Home_Icon" id="Home_Icon" class="me-2">
-            </a>
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link" href="#part1">Introduction</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#part2">Parcours</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#part3">Projets</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#part4">Contact</a>
-                </li>
-            </ul>
+          <div class="card card-pad">
+            <h2 style="margin:0 0 8px;">À propos</h2>
+            <p class="muted" style="margin:0;">
+              Je suis actuellement en alternance en BTS Services Informatiques aux Organisations option Solutions Logicielles et Applications Métiers.
+              Je ne recherche pas d'emplois en ce moment.
+            </p>
+          </div>
         </div>
-    </nav>
+      </section>
+    </main>
 
-
-    <div id="part1">
-        <img src="\ressources\cadre-rond-bois_et_img.png" alt="Arthur Bayard" class="rounded-circle" style="width: 150px; height: 150px;">
-        <h1>Arthur Bayard</h1>
-        <h3>Développeur Junior actuellement en BTS SIO SLAM</h3>
-    </div>
-
-
-    <div id="part2" class="container mt-5" data-bs-spy="scroll" data-bs-target=".navbar">
-        <h1>Mon parcours</h1>
-        <ul>
-            <li>2024 - 2026 : BTS SIO SLAM</li>
-            <li>2020 - 2024 : Baccalauréat Général spécialité Mathématiques et NSI</li>
-            <li>2020 : Stage d'observation dans le service informatique de l'aéroport de Nantes</li>
-        </ul>
-        <div class="history-tl-container">
-            <ul class="tl">
-                <li class="tl-item" ng-repeat="item in retailer_history">
-                <div class="timestamp">
-                    2024 - 2026
-                </div>
-                <div class="item-title">BTS SIO SLAM</div>
-                <div class="item-detail">Don't forget the ring</div>
-                </li>
-                <li class="tl-item" ng-repeat="item in retailer_history">
-                <div class="timestamp">
-                    19th March 2015<br> 3:00 PM
-                </div>
-                <div class="item-title">Kill some Orcs</div>
-                <div class="item-detail">Don't enter the caves!!</div>
-                </li>
-                <li class="tl-item" ng-repeat="item in retailer_history">
-                <div class="timestamp">
-                    1st June 2015<br> 7:00 PM
-                </div>
-                <div class="item-title">Throw that goddamn ring in the lava</div>
-                <div class="item-detail">Also, throw that Gollum too</div>
-                </li>
-            </ul>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>Fait par Arthur Bayard en 2026</div>
+        <div class="footer-links" aria-label="Liens utiles">
+          <a href="./contact/">Contact</a>
+          <a href="assets/CV-dev-Arthur-Bayard.pdf" target="_blank">CV</a>
         </div>
-    </div>
-    
-
-    <div id="part3" class="container mt-5" data-bs-spy="scroll" data-bs-target=".navbar">
-        <h1>Projets</h1>
-        <p>Vous trouverez ici une sélection de projets sur lesquels j'ai travaillé durant mon parcours en BTS SIO SLAM.</p>
-        <ul>
-            <li class="mt-3">
-                <strong>Portfolio</strong><br>
-                Ce site, réalisé avec Bootstrap et HTML/CSS pour présenter mon parcours et mes projets.
-            </li>
-        </ul>
-    </div>
-
-
-    <div id="part4" class="container mt-5 mb-5" data-bs-spy="scroll" data-bs-target=".navbar">
-        <h1>Contact</h1>
-        <p>N'hésitez pas à me contacter pour toute demande ou information complémentaire.</p>
-        <ul>
-            <li>Email : <a href="mailto:arthurbayard8@gmail.com">arthurbayard8@gmail.com</a></li>
-            <li>Téléphone : 07 69 92 61 33</li>
-            <li><a href="https://www.linkedin.com/in/arthur-bayard-5a5174344/" target="_blank">Linkedin</a></li>
-            <li><a href="https://github.com/F4rmur" target="_blank">Github</a></li>
-            <li><a href="\ressources\CV-dev-Arthur-Bayard.pdf" download>Télécharger mon CV</a></li>
-            <li><a href="\ressources\CV-dev-Arthur-Bayard.pdf" target="_blank">Ou ouvrir mon CV</a></li>
-        </ul>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const sections = document.querySelectorAll('#part1, #part2, #part3, #part4');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach((link) => {
-                            const isTarget = link.getAttribute('href') === `#${id}`;
-                            link.classList.toggle('active', isTarget);
-                        });
-                    }
-                });
-            },
-            {
-                threshold: 0.4,
-                rootMargin: '-80px 0px -40% 0px',
-            }
-        );
-
-        sections.forEach((section) => observer.observe(section));
-    </script>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>
+

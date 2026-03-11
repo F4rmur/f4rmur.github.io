@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Formulaire de contact accessible pour me joindre facilement par email." />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0b1220" />
+    <title>Contact | Arthur Bayard</title>
+    <link rel="canonical" href="../contact/" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../" aria-label="Retour à l'accueil">
+          <img src="../assets/Arthur-Bayard.webp" alt="Arthur Bayard développeur full stack" title="Arthur Bayard développeur full stack" class="logo" aria-hidden="true"/>
+          <span>Arthur Bayard</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" data-nav-toggle>
+          <span class="bars" aria-hidden="true"><span></span></span>
+          Menu
+        </button>
+
+        <nav id="nav" class="site-nav" data-site-nav data-open="false" aria-label="Navigation principale">
+          <ul>
+            <li><a href="../" data-nav-link>Accueil</a></li>
+            <li><a href="../experience-pro/" data-nav-link>Expérience pro</a></li>
+            <li><a href="../parcours-loisirs/" data-nav-link>Parcours &amp; loisirs</a></li>
+            <li><a href="../portfolio/" data-nav-link>Portfolio</a></li>
+            <li><a href="../contact/" data-nav-link aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu">
+      <section class="section">
+        <div class="container">
+          <div class="card card-pad">
+            <h1>Contact</h1>
+            <p class="muted">
+              Email : <a href="mailto:arthurbayard8@gmail.com" class="link">arthurbayard8@gmail.com</a> <br/>
+              Téléphone : 07 69 92 61 33 <br/>
+              Ou utilise ce formulaire pour me joindre facilement. (Il n'est pas encore fonctionnel)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Formulaire de contact">
+        <div class="container">
+          <div class="card card-pad">
+            <form>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Nom / Prénom</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">Votre adresse email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+
+                <div class="field full">
+                  <label for="subject">Sujet</label>
+                  <input id="subject" name="subject" type="text" required />
+                </div>
+
+                <div class="field full">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+              </div>
+
+              <div style="margin-top:16px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                <button class="btn primary" type="submit">Envoyer</button>
+              </div>
+
+              <div id="form-status" aria-live="polite" style="margin-top:14px;"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>Fait par Arthur Bayard en 2026</div>
+        <div class="footer-links" aria-label="Liens utiles">
+          <a href="../contact/">Contact</a>
+          <a href="../assets/CV-dev-Arthur-Bayard.pdf" target="_blank">CV</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+

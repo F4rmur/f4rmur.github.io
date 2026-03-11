@@ -1,5 +1,5 @@
 body {
-    background-image: url('/ressources/silksong/Background.png');
+    background-image: url('/assets/silksong/Background.png');
     color: #333;
     padding-top: 20px;
     overflow: hidden;
@@ -12,7 +12,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/ressources/silksong/Calque.png');
+    background-image: url('/assets/silksong/Calque.png');
     mask-repeat: repeat-x;
 }
 
