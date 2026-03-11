@@ -16,7 +16,9 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,"Apple Color Emoji","Segoe UI Emoji";
-  background:radial-gradient(at 20% 10%, rgba(122,162,255,.25), transparent 60%), var(--bg);
+  background:radial-gradient(1200px 700px at 20% 10%, rgba(122,162,255,.25), transparent 50%),
+            radial-gradient(1200px 700px at 80% 70%, rgba(186, 122, 255, 0.121), transparent 30%),
+            var(--bg);
   color:var(--text);
   line-height:1.6;
 }
@@ -82,7 +84,6 @@ a.noUnderline{
   width:48px; height:48px;
   border-radius:12px;
   object-fit: cover;
-  box-shadow:0 10px 25px rgba(122,162,255,.22);
 }
 .brand span{font-weight:700; letter-spacing:.2px}
 
