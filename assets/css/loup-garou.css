@@ -17,63 +17,63 @@
 }
 
 .role--voyante{
-  --role-bg:rgba(122,162,255,.16);
+  --role-bg:rgb(17, 4, 65);
   --role-fg:#eef3ff;
-  --role-accent:var(--primary);
-  --role-border:rgba(122,162,255,.40);
+  --role-accent:#1a0958;
+  --role-border:rgba(36, 12, 124, .35);
 }
 
 .role--sorciere{
-  --role-bg:rgba(88,214,198,.14);
+  --role-bg:rgb(65, 9, 25);
   --role-fg:#d9fff8;
-  --role-accent:#38c9b6;
+  --role-accent:rgb(110, 12, 40);
   --role-border:rgba(56,201,182,.38);
 }
 
 .role--medecin{
-  --role-bg:rgba(185,198,255,.13);
+  --role-bg:rgb(8, 41, 6);
   --role-fg:#f0f4ff;
-  --role-accent:#9aa9ff;
+  --role-accent:rgb(14, 75, 11);
   --role-border:rgba(185,198,255,.35);
 }
 
 .role--chasseur{
-  --role-bg:rgba(255,210,92,.14);
+  --role-bg:rgb(48, 42, 8);
   --role-fg:#fff6dd;
-  --role-accent:#ffd15c;
+  --role-accent:rgb(78, 69, 13);
   --role-border:rgba(255,210,92,.35);
 }
 
 .role--cupidon{
-  --role-bg:rgba(214,132,255,.14);
+  --role-bg:rgb(57, 7, 58);
   --role-fg:#f6e9ff;
-  --role-accent:#d684ff;
+  --role-accent:rgb(88, 15, 70);
   --role-border:rgba(214,132,255,.35);
 }
 
 .role--amoureux{
-  --role-bg:rgba(214,132,255,.12);
+  --role-bg:rgb(71, 9, 66);
   --role-fg:#f6e9ff;
-  --role-accent:#d684ff;
+  --role-accent:rgb(100, 18, 80);
   --role-border:rgba(214,132,255,.32);
 }
 
 .role--villageois{
-  --role-bg:rgba(185,198,255,.10);
+  --role-bg:rgb(61, 33, 10);
   --role-fg:var(--text);
-  --role-accent:rgba(122,162,255,.95);
+  --role-accent:rgb(82, 44, 13);
   --role-border:rgba(185,198,255,.30);
 }
 
 .role--blanc{
   /* rôle neutre (sinon alias de villageois) */
-  --role-bg:rgba(255,255,255,.06);
+  --role-bg:rgb(44, 6, 6);
   --role-fg:var(--text);
-  --role-accent:rgba(122,162,255,.95);
+  --role-accent:rgb(59, 19, 19);
   --role-border:rgba(255,255,255,.18);
 }
 
-.role--ancien{
+/* .role--ancien{
   --role-bg:rgba(255,255,255,.08);
   --role-fg:#f5f6ff;
   --role-accent:#7aa2ff;
@@ -85,7 +85,7 @@
   --role-fg:#d9fff8;
   --role-accent:#58d6c6;
   --role-border:rgba(88,214,198,.30);
-}
+} */
 
 /* Optional: expose semantic variables for inline usage */
 .role{
