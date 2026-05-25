@@ -13,7 +13,7 @@
         'cupidon':'Cupidon',
         'amoureux':'Amoureux',
         'villageois':'Villageois',
-        'blanc':'Blanc'
+        'blanc':'Loup-blanc'
     };
 
     function setRole(role){

@@ -6,7 +6,7 @@
 .role{
   background:var(--role-bg);
   color:var(--role-fg);
-  border:1px solid var(--role-border);
+  border:1px solid var(--role-accent);
 }
 
 .role--loup{
@@ -133,7 +133,6 @@
   font-weight:800;
   letter-spacing:.2px;
   margin-bottom:8px;
-  color:var(--role-accent);
 }
 
 .role-preview .role-line{
