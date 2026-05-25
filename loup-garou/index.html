@@ -9,13 +9,17 @@
         <title>Loup Garou | Arthur Bayard</title>
         <link rel="canonical" href="./loup-garou/" />
         <link rel="stylesheet" href="../assets/css/styles.css" />
+        <link rel="stylesheet" href="../assets/css/loup-garou.css" />
         <script src="../assets/js/main.js" defer></script>
         <script src="../assets/js/script-toggle-header.js" defer></script>
         <script src="../assets/js/script-show-header.js" defer></script>
+        <script src="../assets/js/script-toggle-volet.js" defer></script>
+        <script src="../assets/js/loup-garou.js" defer></script>
     </head>
-    <body>
 
-        <header class="site-header">
+    <body class="role-preview">
+
+        <header class="site-header header-hidden">
         <div class="container header-inner">
             <a class="brand" href="../" aria-label="Retour à l'accueil">
             <img src="../assets/Arthur-Bayard.webp" alt="Arthur Bayard développeur full stack" title="Arthur Bayard développeur full stack" class="logo" aria-hidden="true"/>
@@ -28,17 +32,17 @@
             </button>
 
             <nav id="nav" class="site-nav" data-site-nav data-open="false" aria-label="Navigation principale">
-            <ul>
+            <ul style="margin-right: 60px;">
                 <li><a href="../" data-nav-link>Accueil</a></li>
                 <li><a href="../experience-pro/" data-nav-link>Expérience pro</a></li>
                 <li><a href="../parcours-loisirs/" data-nav-link>Parcours &amp; loisirs</a></li>
                 <li><a href="../portfolio/" data-nav-link>Portfolio</a></li>
                 <li><a href="../contact/" data-nav-link>Contact</a></li>
-
             </ul>
             </nav>
         </div>
         </header>
+
             <button id="hide-header" type="button" class="header-toggle header-toggle--show" aria-label="Cacher le header">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M17 18L12 13L7 18M17 11L12 6L7 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -49,7 +53,77 @@
                     <path d="M7 13L12 18L17 13M7 6L12 11L17 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
-    
+
+            <div id="volet-droit">
+                <div id="toggle-volet">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div id="container-volet">
+                    <div id="chat">
+                        <div id="chat-header">
+                            <h2>Chat</h2>
+                        </div>
+                        <div id="chat-messages">
+                            <div class="message">
+                                <span class="username">Alice</span>
+                                <p class="text">Salut tout le monde !</p>
+                            </div>
+                            <div class="message">
+                                <span class="username">Bob</span>
+                                <p class="text">Salut Alice ! Prêt pour la partie ?</p>
+                            </div>
+                        </div>
+                        <form id="chat-form">
+                            <input type="text" id="chat-input" placeholder="Tapez votre message..." aria-label="Champ de saisie du message"/>
+                            <button type="submit" aria-label="Envoyer le message" class="btn">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEV TEST: boutons pour tester les CSS par rôle -->
+            <main class="section" style="padding-top:24px; display: n one;">
+                <div class="container">
+                    <div class="card card-pad">
+                        <h1 style="margin:0 0 12px;">CSS rôles</h1>
+                        <p class="muted" style="margin:0 0 16px;">
+                            Clique sur un rôle pour changer la palette.
+                        </p>
+
+                        <div class="role-testbar" role="group" aria-label="Choix du rôle">
+                            <button type="button" data-role-test="loup">Loup-garou</button>
+                            <button type="button" data-role-test="voyante">Voyante</button>
+                            <button type="button" data-role-test="sorciere">Sorcière</button>
+                            <button type="button" data-role-test="medecin">Médécin</button>
+                            <button type="button" data-role-test="chasseur">Chasseur</button>
+                            <button type="button" data-role-test="cupidon">Cupidon</button>
+                            <button type="button" data-role-test="amoureux">Amoureux</button>
+                            <button type="button" data-role-test="villageois">Villageois</button>
+                            <button type="button" data-role-test="blanc">Blanc</button>
+                        </div>
+
+                        <div id="role-preview" class="role-preview" style="margin-top:14px;">
+                            <div id="role-name" class="role-name">Loup-garou</div>
+                            <div
+                                id="role-card"
+                                class="role"
+                                style="padding:14px; border-radius:var(--radius);"
+                            >
+                                <div class="role-line" style="display:flex; gap:10px; align-items:center; justify-content:space-between;">
+                                    <span><strong>Nom</strong> : <span id="role-current">Loup-garou</span></span>
+                                    <span style="opacity:.9">Accent & border spécifiques</span>
+                                </div>
+                                <div class="role-line" style="margin-top:8px; opacity:.92">
+                                    Couleurs testées via : <code style="color:var(--muted)">.role--<role></code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
     
     
     </body>

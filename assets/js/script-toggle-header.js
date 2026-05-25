@@ -9,7 +9,7 @@
   };
 
   // Initial state
-  apply(false);
+  apply(true);
 
   toggleLi.addEventListener('click', (e) => {
     e.preventDefault();

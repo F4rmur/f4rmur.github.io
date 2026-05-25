@@ -1,0 +1,143 @@
+/*
+  Role color system (inspired by Thiercelieux):
+  Classes can be applied by the UI like: <div class="role role--loup">...
+*/
+
+.role{
+  background:var(--role-bg);
+  color:var(--role-fg);
+  border:1px solid var(--role-border);
+}
+
+.role--loup{
+  --role-bg:rgb(65, 12, 12);
+  --role-fg:#ffe9ea;
+  --role-accent:#720c0c;
+  --role-border:rgba(255,86,86,.35);
+}
+
+.role--voyante{
+  --role-bg:rgba(122,162,255,.16);
+  --role-fg:#eef3ff;
+  --role-accent:var(--primary);
+  --role-border:rgba(122,162,255,.40);
+}
+
+.role--sorciere{
+  --role-bg:rgba(88,214,198,.14);
+  --role-fg:#d9fff8;
+  --role-accent:#38c9b6;
+  --role-border:rgba(56,201,182,.38);
+}
+
+.role--medecin{
+  --role-bg:rgba(185,198,255,.13);
+  --role-fg:#f0f4ff;
+  --role-accent:#9aa9ff;
+  --role-border:rgba(185,198,255,.35);
+}
+
+.role--chasseur{
+  --role-bg:rgba(255,210,92,.14);
+  --role-fg:#fff6dd;
+  --role-accent:#ffd15c;
+  --role-border:rgba(255,210,92,.35);
+}
+
+.role--cupidon{
+  --role-bg:rgba(214,132,255,.14);
+  --role-fg:#f6e9ff;
+  --role-accent:#d684ff;
+  --role-border:rgba(214,132,255,.35);
+}
+
+.role--amoureux{
+  --role-bg:rgba(214,132,255,.12);
+  --role-fg:#f6e9ff;
+  --role-accent:#d684ff;
+  --role-border:rgba(214,132,255,.32);
+}
+
+.role--villageois{
+  --role-bg:rgba(185,198,255,.10);
+  --role-fg:var(--text);
+  --role-accent:rgba(122,162,255,.95);
+  --role-border:rgba(185,198,255,.30);
+}
+
+.role--blanc{
+  /* rôle neutre (sinon alias de villageois) */
+  --role-bg:rgba(255,255,255,.06);
+  --role-fg:var(--text);
+  --role-accent:rgba(122,162,255,.95);
+  --role-border:rgba(255,255,255,.18);
+}
+
+.role--ancien{
+  --role-bg:rgba(255,255,255,.08);
+  --role-fg:#f5f6ff;
+  --role-accent:#7aa2ff;
+  --role-border:rgba(255,255,255,.22);
+}
+
+.role--idiot{
+  --role-bg:rgba(88,214,198,.10);
+  --role-fg:#d9fff8;
+  --role-accent:#58d6c6;
+  --role-border:rgba(88,214,198,.30);
+}
+
+/* Optional: expose semantic variables for inline usage */
+.role{
+  --role-stroke:var(--role-border);
+  --role-underline:rgba(255,255,255,.22);
+}
+
+/*
+  DEV TEST UI: role test buttons
+  - Injected/used by optional markup in the future.
+  - Current goal: add styles so when you add buttons in HTML you can immediately test role palettes.
+*/
+
+.role-testbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  padding:14px;
+  border:1px dashed var(--border);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,.02);
+}
+
+.role-testbar button{
+  appearance:none;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  padding:10px 12px;
+  border-radius:14px;
+  cursor:pointer;
+  transition:transform .15s ease, border-color .15s ease, background .15s ease;
+}
+
+.role-testbar button:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.22)}
+
+.role-preview{
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  background:radial-gradient(1200px 700px at 20% 10%, var(--role-accent), transparent 50%), var(--role-bg);
+}
+
+.role-preview .role-name{
+  font-weight:800;
+  letter-spacing:.2px;
+  margin-bottom:8px;
+  color:var(--role-accent);
+}
+
+.role-preview .role-line{
+  opacity:.95;
+}
+
+
