@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Loup Garou : projet de jeu en ligne" />
+        <meta name="robots" content="index,follow" />
+        <meta name="theme-color" content="#0b1220" />
+        <title>Loup Garou | Arthur Bayard</title>
+        <link rel="canonical" href="./loup-garou/" />
+        <link rel="stylesheet" href="../assets/css/styles.css" />
+        <script src="../assets/js/main.js" defer></script>
+        <script src="./script-toggle-header.js" defer></script>
+        <script src="./script-show-header.js" defer></script>
+    </head>
+    <body>
+
+        <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../" aria-label="Retour à l'accueil">
+            <img src="../assets/Arthur-Bayard.webp" alt="Arthur Bayard développeur full stack" title="Arthur Bayard développeur full stack" class="logo" aria-hidden="true"/>
+            <span>Arthur Bayard</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" data-nav-toggle>
+            <span class="bars" aria-hidden="false"><span></span></span>
+            Menu
+            </button>
+
+            <nav id="nav" class="site-nav" data-site-nav data-open="false" aria-label="Navigation principale">
+            <ul>
+                <li><a href="../" data-nav-link>Accueil</a></li>
+                <li><a href="../experience-pro/" data-nav-link>Expérience pro</a></li>
+                <li><a href="../parcours-loisirs/" data-nav-link>Parcours &amp; loisirs</a></li>
+                <li><a href="../portfolio/" data-nav-link>Portfolio</a></li>
+                <li><a href="../contact/" data-nav-link>Contact</a></li>
+
+            </ul>
+            </nav>
+        </div>
+        </header>
+            <button id="hide-header" type="button" class="header-toggle header-toggle--show" aria-label="Cacher le header">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M17 18L12 13L7 18M17 11L12 6L7 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button id="show-header" type="button" class="header-toggle header-toggle--show" aria-label="Afficher le header">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M7 13L12 18L17 13M7 6L12 11L17 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+    
+    
+    
+    </body>
+</html>
