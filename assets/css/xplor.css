@@ -34,16 +34,17 @@ body::after {
 }
 
 .landscape {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 6000px;
+    width: 100vw;
     height: 100vh;
     pointer-events: none;
     background-repeat: repeat-x;
     background-position: bottom left;
     background-size: auto 100vh;
     image-rendering: pixelated;
+    will-change: background-position;
 }
 
 .landscape-Jungle-1 {

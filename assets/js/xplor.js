@@ -1,5 +1,27 @@
 const perso = document.getElementById('perso');
+const landscapes = document.querySelectorAll('.landscape');
 let movementTimer;
+let parallaxFrame;
+
+const updateParallax = () => {
+    parallaxFrame = undefined;
+    const scrollPosition = window.scrollX;
+
+    landscapes.forEach((landscape) => {
+        const indexMatch = landscape.className.match(/-(\d+)$/);
+        const layerIndex = indexMatch ? Number(indexMatch[1]) : 1;
+        const layerSpeed = 1 - ((layerIndex - 1) * 0.1);
+        const offset = scrollPosition * layerSpeed;
+
+        landscape.style.backgroundPositionX = `${-offset}px`;
+    });
+};
+
+const requestParallaxUpdate = () => {
+    if (!parallaxFrame) {
+        parallaxFrame = window.requestAnimationFrame(updateParallax);
+    }
+};
 
 const showRunningAnimation = () => {
     perso.classList.add('is-running');
@@ -23,6 +45,9 @@ window.addEventListener('wheel', (event) => {
     const delta = Math.abs(event.deltaY) >= Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
     scrollStep(delta * (event.deltaMode === 1 ? 16 : 1));
 }, { passive: false });
+
+window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+requestParallaxUpdate();
 
 window.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
