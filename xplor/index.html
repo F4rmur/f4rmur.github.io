@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Arthur Bayard</title>
-    <link href="/assets/css/xplor.css" rel="stylesheet">
+    <link href="../assets/css/xplor.css" rel="stylesheet">
 </head>
 <body>
 
@@ -12,7 +12,7 @@
     </div>
 
     <div>
-        <img src="/assets/silksong/perso.png" id="perso" alt="perso" name="perso">
+        <img src="../assets/silksong/perso.png" id="perso" alt="perso" name="perso">
     </div>
 
     <div id="intro" class="zone_prio">
@@ -48,13 +48,25 @@
 
     <script>
         // zone gestion du perso
+        const perso = document.getElementById('perso');
+        const scrollStep = (amount) => {
+            const maxScroll = document.documentElement.scrollWidth - window.innerWidth;
+            const nextPosition = Math.max(0, Math.min(window.scrollX + amount, maxScroll));
+
+            window.scrollTo({ left: nextPosition, top: 0, behavior: 'auto' });
+            perso.style.transform = amount >= 0 ? 'rotateY(180deg)' : 'rotateY(0deg)';
+        };
+
         window.addEventListener('wheel', function(e) {
             e.preventDefault();
-            window.scrollBy(e.deltaY || e.deltaX, 0); // Scroll horizontal
-            if (e.deltaY > 0 || e.deltaX > 0) {
-                document.getElementById('perso').style.transform = 'rotateY(180deg)';
-            }else {
-                document.getElementById('perso').style.transform = 'rotateY(0deg)';
+            const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+            scrollStep(delta * (e.deltaMode === 1 ? 16 : 1));
+        }, { passive: false });
+
+        window.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                scrollStep(e.key === 'ArrowRight' ? 80 : -80);
             }
         });
 
@@ -69,8 +81,9 @@
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    document.getElementById('perso').style.transform = 'rotateY(180deg)';
-                    targetElement.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+                    const targetPosition = targetElement.offsetLeft - 500;
+                    window.scrollTo({ left: Math.max(0, targetPosition), top: 0, behavior: 'smooth' });
+                    perso.style.transform = targetPosition >= window.scrollX ? 'rotateY(180deg)' : 'rotateY(0deg)';
                 }
             });
         });
