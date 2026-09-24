@@ -1,0 +1,46 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#zone-selection{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+a.selection{
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: flex 0.3s ease, background-size 0.3s ease;
+}
+
+a.selection:hover{
+    flex: 1.2;
+}
+
+.selection-bones{
+    background-image: url('../Landscapes/world_selection/world_séléction-bones.png');
+}
+.selection-crystal{
+    background-image: url('../Landscapes/world_selection/world_séléction-crystal.png');
+}
+.selection-hexagon{
+    background-image: url('../Landscapes/world_selection/world_séléction-hexagon.png');
+}
+.selection-jungle{
+    background-image: url('../Landscapes/world_selection/world_séléction-jungle.png');
+}
+.selection-ocean{
+    background-image: url('../Landscapes/world_selection/world_séléction-ocean.png');
+}
+.selection-snow{
+    background-image: url('../Landscapes/world_selection/world_séléction-snow.png');
+}

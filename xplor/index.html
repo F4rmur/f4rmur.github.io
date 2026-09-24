@@ -4,111 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Arthur Bayard</title>
-    <link href="../assets/css/xplor.css" rel="stylesheet">
+    <link href="../assets/css/accueilXplor.css" rel="stylesheet">
 </head>
 <body>
 
-    <div id="calque">
-    </div>
-
-    <div>
-        <img src="../assets/silksong/perso.png" id="perso" alt="perso" name="perso">
-    </div>
-
-    <div id="intro" class="zone_prio">
-        <h1>scroll ou clique sur les liens pour explorer</h1>
-        <p>
-            <a href="../">aller sur le portfolio responsive</a>
-            <a class="nav-link" href="#zone1">zone 1</a>
-            <a class="nav-link" href="#zone2">zone 2</a>
-            <a class="nav-link" href="#zone3">zone 3</a>
-            <a class="nav-link" href="#zone4">zone 4</a>
-        </p>
-    </div>
-
-    <div id="zone1" class="zone_prio">
-        <h1>Arthur Bayard</h1>
-        <p>Développeur Web</p>
-    </div>
-
-    <div id="zone2" class="zone_prio">
-        <h1>Arthur Bayard</h1>
-        <p>Développeur Web</p>
-    </div>
-
-    <div id="zone3" class="zone_prio">
-        <h1>Arthur Bayard</h1>
-        <p>Développeur Web</p>
-    </div>
-
-    <div id="zone4" class="zone_prio">
-        <h1>Arthur Bayard</h1>
-        <p>Développeur Web</p>
-    </div>
-
-    <script>
-        // zone gestion du perso
-        const perso = document.getElementById('perso');
-        const scrollStep = (amount) => {
-            const maxScroll = document.documentElement.scrollWidth - window.innerWidth;
-            const nextPosition = Math.max(0, Math.min(window.scrollX + amount, maxScroll));
-
-            window.scrollTo({ left: nextPosition, top: 0, behavior: 'auto' });
-            perso.style.transform = amount >= 0 ? 'rotateY(180deg)' : 'rotateY(0deg)';
-        };
-
-        window.addEventListener('wheel', function(e) {
-            e.preventDefault();
-            const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
-            scrollStep(delta * (e.deltaMode === 1 ? 16 : 1));
-        }, { passive: false });
-
-        window.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-                e.preventDefault();
-                scrollStep(e.key === 'ArrowRight' ? 80 : -80);
-            }
-        });
-
-
-        // zone gestion du scroll et de la nav
-        const sections = document.querySelectorAll('#zone1, #zone2, #zone3, #zone4');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    const targetPosition = targetElement.offsetLeft - 500;
-                    window.scrollTo({ left: Math.max(0, targetPosition), top: 0, behavior: 'smooth' });
-                    perso.style.transform = targetPosition >= window.scrollX ? 'rotateY(180deg)' : 'rotateY(0deg)';
-                }
-            });
-        });
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach((link) => {
-                            const isTarget = link.getAttribute('href') === `#${id}`;
-                            link.classList.toggle('active', isTarget);
-                        });
-                    }
-                });
-            },
-            {
-                threshold: 0.4,
-                rootMargin: '-80px 0px -40% 0px',
-            }
-        );
-
-        sections.forEach((section) => observer.observe(section));
-
-    </script>
+<div id="zone-selection">
+    <a class="selection selection-jungle" href="./jungle/"></a>
+    <a class="selection selection-bones" href="./bones/"></a>
+    <a class="selection selection-hexagon" href="./hexagon/"></a>
+    <a class="selection selection-ocean" href="./ocean/"></a>
+    <a class="selection selection-snow" href="./snow/"></a>
+    <a class="selection selection-crystal" href="./crystal/"></a>
+</div>
 
 </body>
 </html>

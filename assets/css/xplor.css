@@ -6,13 +6,7 @@ html {
 body {
     min-width: 6000px;
     margin: 0;
-    background-color: #071b1a;
-    background-image:
-        linear-gradient(180deg, rgba(3, 18, 22, 0.18) 0%, rgba(4, 28, 23, 0.08) 46%, rgba(2, 10, 13, 0.62) 100%),
-        url('../silksong/Background.png');
-    background-repeat: repeat-x;
-    background-position: left top;
-    background-size: auto 100vh;
+    background: #08151f;
     color: #f4f1d8;
     padding-top: 20px;
     overflow: visible;
@@ -29,8 +23,8 @@ body::after {
 body::before {
     z-index: 0;
     background:
-        radial-gradient(circle at 50% 28%, rgba(181, 232, 108, 0.2), transparent 28%),
-        radial-gradient(circle at 12% 72%, rgba(31, 132, 126, 0.2), transparent 32%);
+        radial-gradient(circle at 50% 26%, rgba(134, 208, 183, 0.18), transparent 27%),
+        linear-gradient(180deg, rgba(5, 26, 42, 0.05), rgba(4, 17, 24, 0.7));
     mix-blend-mode: screen;
 }
 
@@ -39,24 +33,162 @@ body::after {
     background: linear-gradient(90deg, rgba(2, 12, 16, 0.62), transparent 18%, transparent 82%, rgba(2, 12, 16, 0.62));
 }
 
-#calque {
-    position: fixed;
-    z-index: 2;
+.landscape {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 6000px;
     height: 100vh;
     pointer-events: none;
-    background-image: url('../silksong/Calque.png');
     background-repeat: repeat-x;
     background-position: bottom left;
     background-size: auto 100vh;
-    opacity: 0.82;
+    image-rendering: pixelated;
+}
+
+.landscape-Jungle-1 {
+    z-index: 4;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Jungle/jungle_1.png');
+}
+.landscape-Jungle-2 {
+    z-index: 3;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Jungle/jungle_2.png');
+}
+.landscape-Jungle-3 {
+    z-index: 2;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Jungle/jungle_3.png');
+}
+.landscape-Jungle-4 {
+    z-index: 1;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Jungle/jungle_4.png');
+}
+.landscape-Jungle-5 {
+    z-index: 0;
+    background-color: #e6df29;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Jungle/jungle_5.png');
+}
+
+.landscape-Hexagon-1 {
+    z-index: 4;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Hexagon/hexagon_1.png');
+}
+.landscape-Hexagon-2 {
+    z-index: 3;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Hexagon/hexagon_2.png');
+}
+.landscape-Hexagon-3 {
+    z-index: 2;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Hexagon/hexagon_3.png');
+}
+.landscape-Hexagon-4 {
+    z-index: 1;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Hexagon/hexagon_4.png');
+}
+.landscape-Hexagon-5 {
+    z-index: 0;
+    background-color: #e6df29;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Hexagon/hexagon_5.png');
+}
+
+.landscape-Bones-1 {
+    z-index: 4;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Bones/Bones1.png');
+}
+.landscape-Bones-2 {
+    z-index: 3;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Bones/Bones2.png');
+}
+.landscape-Bones-3 {
+    z-index: 2;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Bones/Bones3.png');
+}
+.landscape-Bones-4 {
+    z-index: 1;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Bones/Bones4.png');
+}
+.landscape-Bones-5 {
+    z-index: 0;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Bones/Bones5.png');
+}
+
+.landscape-Crystal-1 {
+    z-index: 4;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Crystal/crystal1.png');
+}
+.landscape-Crystal-2 {
+    z-index: 3;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Crystal/crystal2.png');
+}
+.landscape-Crystal-3 {
+    z-index: 2;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Crystal/crystal3.png');
+}
+.landscape-Crystal-4 {
+    z-index: 1;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Crystal/crystal4.png');
+}
+.landscape-Crystal-5 {
+    z-index: 0;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Crystal/crystal5.png');
+}
+
+.landscape-Ocean-1 {
+    z-index: 4;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Ocean/ocean1.png');
+}
+.landscape-Ocean-2 {
+    z-index: 3;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Ocean/ocean2.png');
+}
+.landscape-Ocean-3 {
+    z-index: 2;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Ocean/ocean3.png');
+}
+.landscape-Ocean-4 {
+    z-index: 1;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Ocean/ocean4.png');
+}
+.landscape-Ocean-5 {
+    z-index: 0;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Ocean/ocean5.png');
+}
+
+.landscape-Snow-1 {
+    z-index: 4;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Snow/snow1.png');
+}
+.landscape-Snow-2 {
+    z-index: 3;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Snow/snow2.png');
+}
+.landscape-Snow-3 {
+    z-index: 2;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Snow/snow3.png');
+}
+.landscape-Snow-4 {
+    z-index: 1;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Snow/snow4.png');
+}
+.landscape-Snow-5 {
+    z-index: 0;
+    background-image: url('../Landscapes/Free%20Parallax%20Landscapes/Parallax/Snow/snow5.png');
+}
+
+#calque {
+    display: none;
+}
+
+.landscape::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 62%, rgba(3, 13, 18, 0.28));
+    background-repeat: repeat-x;
 }
 
 #perso {
     position: fixed;
-    z-index: 3;
+    z-index: 5;
     bottom: 25px;
     left: 500px;
     filter: drop-shadow(0 8px 5px rgba(0, 0, 0, 0.55));
@@ -64,7 +196,7 @@ body::after {
 
 .zone_prio{
     position: absolute;
-    z-index: 4;
+    z-index: 6;
     color: white;
     max-width: min(560px, calc(100vw - 40px));
     padding: 18px 22px;
