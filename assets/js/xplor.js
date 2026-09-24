@@ -1,10 +1,21 @@
 const perso = document.getElementById('perso');
+let movementTimer;
+
+const showRunningAnimation = () => {
+    perso.classList.add('is-running');
+    window.clearTimeout(movementTimer);
+    movementTimer = window.setTimeout(() => {
+        perso.classList.remove('is-running');
+    }, 180);
+};
+
 const scrollStep = (amount) => {
     const maxScroll = document.documentElement.scrollWidth - window.innerWidth;
     const nextPosition = Math.max(0, Math.min(window.scrollX + amount, maxScroll));
 
     window.scrollTo({ left: nextPosition, top: 0, behavior: 'auto' });
     perso.style.transform = amount >= 0 ? 'rotateY(0deg)' : 'rotateY(180deg)';
+    showRunningAnimation();
 };
 
 window.addEventListener('wheel', (event) => {
@@ -32,6 +43,7 @@ navLinks.forEach((link) => {
             const targetPosition = targetElement.offsetLeft - 500;
             window.scrollTo({ left: Math.max(0, targetPosition), top: 0, behavior: 'smooth' });
             perso.style.transform = targetPosition >= window.scrollX ? 'rotateY(180deg)' : 'rotateY(0deg)';
+            showRunningAnimation();
         }
     });
 });

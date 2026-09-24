@@ -187,11 +187,35 @@ body::after {
 }
 
 #perso {
+    width: 162px;
+    height: 162px;
     position: fixed;
     z-index: 5;
     bottom: 25px;
     left: 500px;
+    background-image: url('../Fantasy Warrior/Idle.png');
+    background-repeat: no-repeat;
+    background-size: 1620px 162px;
+    animation: perso-idle 1s steps(10) infinite;
     filter: drop-shadow(0 8px 5px rgba(0, 0, 0, 0.55));
+}
+
+#perso.is-running {
+    background-image: url('../Fantasy Warrior/Run.png');
+    background-size: 1296px 162px;
+    animation-name: perso-run;
+    animation-duration: 0.7s;
+    animation-timing-function: steps(8);
+}
+
+@keyframes perso-idle {
+    from { background-position: 0 0; }
+    to { background-position: -1620px 0; }
+}
+
+@keyframes perso-run {
+    from { background-position: 0 0; }
+    to { background-position: -1296px 0; }
 }
 
 .zone_prio{
