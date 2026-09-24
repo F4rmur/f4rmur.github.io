@@ -192,12 +192,14 @@ body::after {
     height: 162px;
     position: fixed;
     z-index: 5;
-    bottom: 25px;
-    left: 500px;
+    bottom: -180px;
+    left: 45vw;
     background-image: url('../Fantasy Warrior/Idle.png');
     background-repeat: no-repeat;
     background-size: 1620px 162px;
     animation: perso-idle 1s steps(10) infinite;
+    transform: scale(3);
+    transform-origin: bottom center;
     filter: drop-shadow(0 8px 5px rgba(0, 0, 0, 0.55));
 }
 

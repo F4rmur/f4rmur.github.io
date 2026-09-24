@@ -1,7 +1,12 @@
 const perso = document.getElementById('perso');
 const landscapes = document.querySelectorAll('.landscape');
+const persoScale = 3;
 let movementTimer;
 let parallaxFrame;
+
+const setPersoDirection = (direction) => {
+    perso.style.transform = `rotateY(${direction}deg) scale(${persoScale})`;
+};
 
 const updateParallax = () => {
     parallaxFrame = undefined;
@@ -36,7 +41,7 @@ const scrollStep = (amount) => {
     const nextPosition = Math.max(0, Math.min(window.scrollX + amount, maxScroll));
 
     window.scrollTo({ left: nextPosition, top: 0, behavior: 'auto' });
-    perso.style.transform = amount >= 0 ? 'rotateY(0deg)' : 'rotateY(180deg)';
+    setPersoDirection(amount >= 0 ? 0 : 180);
     showRunningAnimation();
 };
 
@@ -67,7 +72,7 @@ navLinks.forEach((link) => {
         if (targetElement) {
             const targetPosition = targetElement.offsetLeft - 500;
             window.scrollTo({ left: Math.max(0, targetPosition), top: 0, behavior: 'smooth' });
-            perso.style.transform = targetPosition >= window.scrollX ? 'rotateY(180deg)' : 'rotateY(0deg)';
+            setPersoDirection(targetPosition >= window.scrollX ? 180 : 0);
             showRunningAnimation();
         }
     });

@@ -11,6 +11,26 @@ body {
     height: 100vh;
 }
 
+#banderole{
+    position: fixed;
+    top: 10px;
+    left: 15%;
+    z-index: 10;
+    width: 70vw;
+    height: 160px;
+    background-image: url('../Landscapes/banderole.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+
+    text-align: center;
+    padding-top: 2vw;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
 
 a.selection{
     flex: 1;
