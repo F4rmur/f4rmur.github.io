@@ -331,6 +331,11 @@ body::after {
     top: 15vh;
 }
 
+#zone5{
+    left: 4100px;
+    top: 20vh;
+}
+
 #lien-part2{
     margin-top: 10px;
 }
