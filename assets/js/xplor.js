@@ -3,6 +3,72 @@ const landscapes = document.querySelectorAll('.landscape');
 const persoScale = 3;
 let movementTimer;
 let parallaxFrame;
+const progressSections = Array.from(document.querySelectorAll('main > section'));
+const progressHud = document.createElement('aside');
+const progressTitle = document.createElement('span');
+const progressBar = document.createElement('div');
+const progressFill = document.createElement('span');
+
+progressHud.className = 'xplor-hud';
+progressHud.setAttribute('aria-label', 'Repères de navigation');
+
+const progressKicker = document.createElement('span');
+progressKicker.className = 'xplor-hud-kicker';
+progressKicker.textContent = 'EXPLORATION';
+
+progressTitle.className = 'xplor-hud-title';
+
+progressBar.className = 'xplor-hud-progress';
+progressBar.setAttribute('role', 'progressbar');
+progressBar.setAttribute('aria-label', 'Progression dans cet univers');
+progressBar.setAttribute('aria-valuemin', '1');
+progressBar.setAttribute('aria-valuemax', String(progressSections.length));
+progressFill.className = 'xplor-hud-progress-fill';
+progressBar.append(progressFill);
+
+const progressControls = document.createElement('div');
+progressControls.className = 'xplor-hud-controls';
+const wheelHint = document.createElement('span');
+wheelHint.textContent = 'Molette pour avancer';
+const keyboardHint = document.createElement('span');
+keyboardHint.textContent = '← → clavier';
+progressControls.append(wheelHint, keyboardHint);
+
+progressHud.append(progressKicker, progressTitle, progressBar, progressControls);
+document.body.append(progressHud);
+
+const nextWorldLink = document.querySelector('.world-navigation-next');
+
+const positionWorldNavigation = () => {
+    if (nextWorldLink) {
+        nextWorldLink.style.left = `${document.documentElement.scrollWidth - nextWorldLink.offsetWidth}px`;
+    }
+};
+
+if (nextWorldLink) {
+    positionWorldNavigation();
+    window.addEventListener('resize', positionWorldNavigation);
+}
+
+const updateProgress = () => {
+    if (progressSections.length === 0) {
+        return;
+    }
+
+    const activationPoint = window.scrollX + window.innerWidth * 0.45;
+    let activeIndex = 0;
+
+    progressSections.forEach((section, index) => {
+        if (section.offsetLeft <= activationPoint) {
+            activeIndex = index;
+        }
+    });
+
+    const activeHeading = progressSections[activeIndex].querySelector('h1, h2');
+    progressTitle.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(progressSections.length).padStart(2, '0')} · ${activeHeading ? activeHeading.textContent.trim() : 'Exploration'}`;
+    progressBar.setAttribute('aria-valuenow', String(activeIndex + 1));
+    progressFill.style.width = `${((activeIndex + 1) / progressSections.length) * 100}%`;
+};
 
 const setPersoDirection = (direction) => {
     perso.style.transform = `rotateY(${direction}deg) scale(${persoScale})`;
@@ -20,6 +86,8 @@ const updateParallax = () => {
 
         landscape.style.backgroundPositionX = `${-offset}px`;
     });
+
+    updateProgress();
 };
 
 const requestParallaxUpdate = () => {

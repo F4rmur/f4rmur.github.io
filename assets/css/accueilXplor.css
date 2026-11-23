@@ -5,62 +5,153 @@ body {
     margin: 0;
 }
 
-#zone-selection{
+body {
+    overflow: hidden;
+    background: #10191c;
+    color: #fff8df;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#zone-selection {
     display: flex;
     width: 100vw;
     height: 100vh;
 }
 
-#banderole{
+#banderole {
     position: fixed;
-    top: 10px;
+    top: 3vh;
     left: 15%;
     z-index: 10;
+    display: flex;
     width: 70vw;
-    height: 160px;
+    min-height: 120px;
+    padding-bottom: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-image: url('../Landscapes/banderole.png');
-    background-position: center top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     pointer-events: none;
-
     text-align: center;
-    padding-top: 2vw;
-    font-size: xx-large;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
+#banderole span {
+    font-size: clamp(1.25rem, 2.8vw, 2.25rem);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
 
-a.selection{
-    flex: 1;
+#banderole small {
+    margin-top: 6px;
+    color: #f0dfb1;
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+a.selection {
+    position: relative;
+    display: flex;
     min-width: 0;
     min-height: 0;
+    flex: 1;
+    align-items: flex-end;
+    overflow: hidden;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: flex 0.3s ease, background-size 0.3s ease;
+    color: #fff8df;
+    text-decoration: none;
+    transition: flex 0.35s ease, filter 0.35s ease;
 }
 
-a.selection:hover{
-    flex: 1.2;
+a.selection::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 13, 17, 0.04) 28%, rgba(7, 13, 17, 0.18) 48%, rgba(7, 13, 17, 0.92) 100%);
+    content: '';
 }
 
-.selection-bones{
+a.selection:hover,
+a.selection:focus-visible {
+    z-index: 1;
+    flex: 1.35;
+    filter: saturate(1.12);
+}
+
+a.selection:focus-visible {
+    outline: 3px solid #fff1b8;
+    outline-offset: -6px;
+}
+
+.selection-copy {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 7px;
+    padding: 24px clamp(12px, 1.8vw, 26px);
+    background: linear-gradient(90deg, rgba(5, 14, 17, 0.68), rgba(5, 14, 17, 0.08));
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
+    transition: transform 0.35s ease;
+}
+
+a.selection:hover .selection-copy,
+a.selection:focus-visible .selection-copy {
+    transform: translateY(-8px);
+}
+
+.selection-number {
+    color: #f2d89a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.selection-copy strong {
+    font-size: clamp(1rem, 1.6vw, 1.45rem);
+    line-height: 1.15;
+}
+
+.selection-copy small {
+    max-width: 18rem;
+    color: rgba(255, 248, 223, 0.82);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.selection-bones {
     background-image: url('../Landscapes/world_selection/world_séléction-bones.png');
 }
-.selection-crystal{
+
+.selection-crystal {
     background-image: url('../Landscapes/world_selection/world_séléction-crystal.png');
 }
-.selection-hexagon{
+
+.selection-hexagon {
     background-image: url('../Landscapes/world_selection/world_séléction-hexagon.png');
 }
-.selection-jungle{
+
+.selection-jungle {
     background-image: url('../Landscapes/world_selection/world_séléction-jungle.png');
 }
-.selection-ocean{
+
+.selection-ocean {
     background-image: url('../Landscapes/world_selection/world_séléction-ocean.png');
 }
-.selection-snow{
+
+.selection-snow {
     background-image: url('../Landscapes/world_selection/world_séléction-snow.png');
+}
+
+@media (prefers-reduced-motion: reduce) {
+    a.selection,
+    .selection-copy {
+        transition: none;
+    }
 }
